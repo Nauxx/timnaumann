@@ -46,8 +46,6 @@ const expanderSlide = () => {
   const logos = document.querySelectorAll(".logo");
   const expanders = document.querySelectorAll(".expander");
 
-  console.log(logos);
-
   logos.forEach((logo, index) => {
     logo.addEventListener("click", () => {
       expanders.forEach((expander) => {
@@ -60,7 +58,39 @@ const expanderSlide = () => {
   });
 };
 
-const iconAnimation = () => {
+const cardAnimation = () => {
+  const cards = document.querySelectorAll(
+    ".icon"
+  ); /* make click happen on clicking card, not icon */
+  const icons = document.querySelectorAll(".spinner");
+  const overlays = document.querySelectorAll(".card-overlay");
+  const buttons = document.querySelectorAll(".btn-close");
+  const content = document.querySelectorAll(".card-overlay-content ");
+  const contentButtons = document.querySelectorAll(".card-overlay-buttons");
+
+  icons.forEach((icon, index) => {
+    icon.addEventListener("click", () => {
+      icon.style.animation = "spin .7s ease ";
+      overlays[index].style.animation =
+        "overlayBackground .5s ease .3s forwards";
+      overlays[index].classList.toggle("card-overlay-active");
+      content[index].classList.toggle("content-overlay-active");
+      contentButtons[index].classList.toggle("content-overlay-active");
+    });
+  });
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      icons[index].style.animation = "";
+      overlays[index].style.animation = "";
+      overlays[index].classList.toggle("card-overlay-active");
+      content[index].classList.toggle("content-overlay-active");
+      contentButtons[index].classList.toggle("content-overlay-active");
+    });
+  });
+};
+
+/* const iconAnimation = () => {
   const icons = document.querySelectorAll(".spinner");
   icons.forEach((icon) => {
     icon.addEventListener("click", () => {
@@ -86,9 +116,10 @@ const overlayAnimation = () => {
       paragraph.style.animation = "paraFadeIn 1s ease .8s forwards";
     });
   });
-};
+}; */
 
 navSlide();
 expanderSlide();
-iconAnimation();
-overlayAnimation();
+cardAnimation();
+/* iconAnimation();
+overlayAnimation(); */

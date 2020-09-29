@@ -385,6 +385,10 @@ nav .nav-active {
           align-items: center;
   font-size: 12rem;
   color: #db9003;
+  overflow: hidden;
+  position: relative;
+  /* so overflow hidden works */
+  cursor: pointer;
   /* &::after {
           content: "";
           background: radial-gradient(black, $textColor);
@@ -397,23 +401,41 @@ nav .nav-active {
 .projects .cards .card .icon .card-overlay {
   background: #db9003;
   opacity: 0;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  /* so that the growing animation goes out of the box */
+  height: 300px;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: -1;
-  font-family: "Roboto", sans-serif;
 }
 
 .projects .cards .card .icon .card-overlay .card-overlay-content {
   font-size: 1rem;
   opacity: 0;
+  width: 250px;
 }
 
 .projects .cards .card .icon .card-overlay .card-overlay-content p {
-  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  color: #fdfcec;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
-.projects .cards .card .icon .card-overlay .card-overlay-content .card-buttons {
+.projects .cards .card .icon .card-overlay .card-overlay-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,25 +443,41 @@ nav .nav-active {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
 }
 
-.projects .cards .card .icon .card-overlay .card-overlay-content .card-buttons a,
-.projects .cards .card .icon .card-overlay .card-overlay-content .card-buttons p {
+.projects .cards .card .icon .card-overlay .card-overlay-buttons button {
+  width: 10rem;
+  height: 4rem;
   font-family: "Roboto", sans-serif;
-  padding: 0;
+  margin: 0 1rem 1rem;
+  font-size: 1.5rem;
+  color: #fdfcec;
+  background: #db9003;
+  border: 2px solid #fdfcec;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.projects .cards .card .icon .card-overlay .card-overlay-buttons button a {
   font-size: 1.5rem;
   color: #fdfcec;
 }
 
 .projects .cards .card .icon .card-overlay-active {
-  opacity: 1 !important;
-  z-index: 0 !important;
-  /* transition: 0.5s; */
+  z-index: 1 !important;
 }
 
-.projects .cards .card p {
+.projects .cards .card .icon .content-overlay-active {
+  opacity: 1 !important;
+  -webkit-transition: 0.5s ease-in 0.5s;
+  transition: 0.5s ease-in 0.5s;
+}
+
+.projects .cards .card .card-description {
   background: #db9003;
   color: #fdfcec;
   /* border-top: 5px solid $orange; */
@@ -450,7 +488,7 @@ nav .nav-active {
   font-weight: 700;
 }
 
-@-webkit-keyframes fade {
+@-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -463,7 +501,7 @@ nav .nav-active {
   }
 }
 
-@keyframes fade {
+@keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -476,29 +514,33 @@ nav .nav-active {
   }
 }
 
-@-webkit-keyframes overlay {
+@-webkit-keyframes overlayBackground {
   from {
     height: 0px;
     width: 0px;
     border-radius: 50%;
+    opacity: 0;
   }
   to {
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     border-radius: 100%;
+    opacity: 0.95;
   }
 }
 
-@keyframes overlay {
+@keyframes overlayBackground {
   from {
     height: 0px;
     width: 0px;
     border-radius: 50%;
+    opacity: 0;
   }
   to {
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     border-radius: 100%;
+    opacity: 0.95;
   }
 }
 

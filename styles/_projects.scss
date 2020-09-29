@@ -29,33 +29,54 @@
         align-items: center;
         font-size: 12rem;
         color: $orange;
+        overflow: hidden;
+        position: relative; /* so overflow hidden works */
+        cursor: pointer;
 
         .card-overlay {
           background: $orange;
           opacity: 0;
-          width: 250px;
-          height: 250px;
+          width: 300px; /* so that the growing animation goes out of the box */
+          height: 300px;
           position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           z-index: -1;
-          font-family: "Roboto", sans-serif;
 
           .card-overlay-content {
             font-size: 1rem;
             opacity: 0;
-
+            width: 250px;
             p {
-              font-size: 1.5rem;
+              font-family: "Roboto", sans-serif;
+              color: $background;
+              font-size: 2rem;
+              text-align: center;
+              padding: 1rem 1rem 1rem 1rem;
             }
+          }
 
-            .card-buttons {
-              display: flex;
-              flex-direction: row;
-              justify-content: space-around;
+          .card-overlay-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            opacity: 0;
 
-              a,
-              p {
-                font-family: "Roboto", sans-serif;
-                padding: 0;
+            button {
+              width: 10rem;
+              height: 4rem;
+              font-family: "Roboto", sans-serif;
+              margin: 0 1rem 1rem;
+              font-size: 1.5rem;
+              color: $background;
+              background: $orange;
+              border: 2px solid $background;
+              text-transform: uppercase;
+              font-weight: bold;
+
+              a {
                 font-size: 1.5rem;
                 color: $background;
               }
@@ -64,10 +85,12 @@
         }
 
         .card-overlay-active {
-          opacity: 1 !important;
-          z-index: 0 !important;
+          z-index: 1 !important;
+        }
 
-          /* transition: 0.5s; */
+        .content-overlay-active {
+          opacity: 1 !important;
+          transition: 0.5s ease-in 0.5s;
         }
 
         /* &::after {
@@ -80,7 +103,7 @@
       }
 
       /* THIS PARAGRAPH INTERFERS WITH ALL THE OTHER PARAGRAPHS!!!!!!!!! */
-      p {
+      .card-description {
         background: $orange;
         color: $background;
         /* border-top: 5px solid $orange; */
@@ -94,7 +117,7 @@
   }
 }
 
-@keyframes fade {
+@keyframes spin {
   from {
     transform: rotate(0deg);
     font-size: 100%;
@@ -105,16 +128,18 @@
   }
 }
 
-@keyframes overlay {
+@keyframes overlayBackground {
   from {
     height: 0px;
     width: 0px;
     border-radius: 50%;
+    opacity: 0;
   }
   to {
-    height: 250px;
-    width: 250px;
+    height: 400px;
+    width: 400px;
     border-radius: 100%;
+    opacity: 0.95;
   }
 }
 
