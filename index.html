@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/d1fe03bc0d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#projects">Projekte</a></li>
+        <li><a class="nav-link" href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <section class="home" id="home">
+      <div class="center-content">
+        <div class="name">
+          <h1>tim<span class="underscore">_</span></h1>
+          <h1 class="name-background">naumann</h1>
+        </div>
+        <div class="descr">
+          <h3>web-developer//copywriter</h3>
+        </div>
+      </div>
+      <div class="arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h2>about</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo perferendis
+        ipsam, rem dolor esse recusandae iure odio eos id, dignissimos odit
+        possimus assumenda veritatis minus? Deserunt nobis quisquam
+        reprehenderit quam?Quo perferendis ipsam, rem dolor esse recusandae iure
+        odio eos id, dignissimos odit possimus assumenda veritatis minus?
+        Deserunt nobis quisquam reprehenderit quam?
+      </p>
+    </section>
+    <section class="projects" id="projects">
+      <h2>projekte</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">
+            <i class="fab fa-spotify spinner"></i>
+            <div class="card-overlay ">
+              <div class="card-overlay-content"> 
+                <p>
+                  Web-App, die die Spotify Api nutzt, 
+                  um Playlist-Optionen 
+                  und zusätzliche Funktionen für Hörspiele hinzuzufügen. Tech-Stack: MERN
+               </p>  
+               <div class="card-buttons">
+                <a href="#">GitHub</a>
+                <p>Close</p>
+               </div>
+              </div>
+                
+            </div>
+          </div>
+          <p class="card-description">Spotify Web Api</p>
+        </div>
+        <div class="card">
+          <div class="icon"><span class="spinner">&#x1f0a1;</span></div>
+          <p class="card-description">Mau Mau Spiel</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fas fa-university spinner"></i></div>
+          <p class="card-description">Banking App Light</p>
+        </div>
+        <div class="card">
+          <div class="icon"><i class="fas fa-globe spinner"></i></div>
+          <p class="card-description">Example Website</p>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2>kontakt</h2>
+      <div class="contact-container">
+        <div class="contact-logos">
+          <i class="fas fa-envelope-square logo"></i>
+          <i class="fab fa-github-square logo"></i>
+          <i class="fab fa-linkedin logo"></i>
+          <i class="fab fa-xing-square logo"></i>
+        </div>
+        <div class="expand">
+          <div class="expander "> <p>Copy Email <i class="fas fa-angle-right"></i> </p> </i></div>
+          <div class="expander "> <p>GitHub <i class="fas fa-angle-right"> </i></p></div>
+          <div class="expander"> <p>LinkedIn <i class="fas fa-angle-right"> </i></p></div>
+          <div class="expander"> <p>Xing <i class="fas fa-angle-right"> </i></p></div>
+
+        </div>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>

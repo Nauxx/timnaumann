@@ -1,0 +1,62 @@
+/* GLOBAL STYLING */
+@import "scheme";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* using this will mean that 1rem ~ 10px */
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  color: $textColor;
+  background: $background;
+  position: relative; /* this somehow prevents overflow */
+}
+
+section {
+  background: $background;
+  max-width: 1800px;
+  margin: auto;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* mixins */
+
+@mixin headline($padding, $align-self-value) {
+  text-transform: uppercase;
+  border-bottom: 8px solid $orange;
+  font-size: 4rem;
+  #{$padding}: 5rem;
+  align-self: $align-self-value;
+  margin: 6rem 0 3rem 0;
+}
+
+/* IMPORTS */
+
+@import "nav";
+@import "home";
+@import "about";
+@import "projects";
+@import "contact";

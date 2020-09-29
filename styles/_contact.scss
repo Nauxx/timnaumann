@@ -1,0 +1,66 @@
+.contact {
+  background: $textColor;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    color: $background;
+    @include headline(padding-right, flex-end);
+  }
+
+  .contact-container {
+    display: flex;
+    margin: 3rem 0 3rem 0;
+
+    .contact-logos {
+      color: $background;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 7rem;
+      padding: 0 2rem 0 1rem;
+      border-right: solid 5px $orange;
+
+      i {
+        margin: 1.5rem 0 1.5rem 0;
+      }
+    }
+
+    .expand {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
+      font-size: 2.5rem;
+      font-weight: 700;
+      padding: 0 0 0 2rem;
+
+      .expander {
+        transform: translateX(100%);
+        transition: transform 0.2s ease-in;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        color: $textColor;
+        background: $background;
+        border-right: 8px solid $orange;
+        padding: 1rem 0 1rem 0;
+
+        p {
+          transition: 0.2s ease;
+        }
+
+        i {
+          color: $textColor;
+        }
+      }
+      /* display: none; */
+      /* background: crimson; */
+    }
+  }
+  .link-active {
+    transform: translateX(0%) !important;
+  }
+}

@@ -1,0 +1,57 @@
+.home {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  .center-content {
+    width: 100%;
+    padding: 0 0 0 3rem;
+    .name {
+      line-height: 0.9;
+      .name-background {
+        background: linear-gradient(to right, $orange, orange);
+        line-height: 0.68;
+      }
+      .underscore {
+        animation: blink 1.5s steps(5, start) infinite;
+        -webkit-animation: blink 1.5s steps(5, start) infinite;
+      }
+    }
+    .descr {
+      font-family: "Roboto", sans-serif;
+      font-size: 3rem;
+    }
+  }
+  .arrow {
+    animation: bounce 1.3s alternate infinite;
+
+    font-size: 5rem;
+    position: relative;
+    bottom: -20rem;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+  }
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}

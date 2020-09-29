@@ -1,0 +1,128 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    @include headline(padding-left, flex-start);
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 6rem;
+
+    .card {
+      background: transparent;
+      /* width: 300px;
+      height: 300px; */
+      margin: 0 1rem 6rem 1rem;
+      border: 5px solid $orange;
+      border-radius: 5px;
+
+      .icon {
+        background: radial-gradient($textColor, black);
+        width: 250px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12rem;
+        color: $orange;
+
+        .card-overlay {
+          background: $orange;
+          opacity: 0;
+          width: 250px;
+          height: 250px;
+          position: absolute;
+          z-index: -1;
+          font-family: "Roboto", sans-serif;
+
+          .card-overlay-content {
+            font-size: 1rem;
+            opacity: 0;
+
+            p {
+              font-size: 1.5rem;
+            }
+
+            .card-buttons {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+
+              a,
+              p {
+                font-family: "Roboto", sans-serif;
+                padding: 0;
+                font-size: 1.5rem;
+                color: $background;
+              }
+            }
+          }
+        }
+
+        .card-overlay-active {
+          opacity: 1 !important;
+          z-index: 0 !important;
+
+          /* transition: 0.5s; */
+        }
+
+        /* &::after {
+          content: "";
+          background: radial-gradient(black, $textColor);
+          width: 250px;
+          height: 250px;
+          position: absolute;
+        } */
+      }
+
+      /* THIS PARAGRAPH INTERFERS WITH ALL THE OTHER PARAGRAPHS!!!!!!!!! */
+      p {
+        background: $orange;
+        color: $background;
+        /* border-top: 5px solid $orange; */
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 1rem 0 1rem 0;
+        text-align: center;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    transform: rotate(0deg);
+    font-size: 100%;
+  }
+  to {
+    transform: rotate(1080deg);
+    font-size: 0;
+  }
+}
+
+@keyframes overlay {
+  from {
+    height: 0px;
+    width: 0px;
+    border-radius: 50%;
+  }
+  to {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+  }
+}
+
+@keyframes paraFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

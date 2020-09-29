@@ -1,0 +1,104 @@
+nav {
+  width: 90%;
+  margin: auto;
+  background: transparent;
+  min-height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+
+  .logo-menu {
+    width: 40px;
+    height: 40px;
+    background: $orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 2px;
+    z-index: 2;
+
+    /* display: none; */
+
+    .line1 {
+      width: 30px;
+      height: 5px;
+      transition: 0.5s;
+    }
+    .line2 {
+      width: 30px;
+      height: 5px;
+      background: transparent;
+    }
+    .line3 {
+      width: 30px;
+      height: 5px;
+      background: $textColor;
+      transition: 0.5s;
+    }
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    top: 0;
+    background: linear-gradient(to right, black, $textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    opacity: 0.97;
+    transition: transform 0.5s ease-in;
+    z-index: 1;
+    li {
+      opacity: 0;
+
+      a {
+        font-weight: 700;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: $background;
+        border-bottom: 5px solid $orange;
+      }
+    }
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+    z-index: 1;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle {
+  background: transparent !important;
+}
+
+.toggle .line1 {
+  background: $orange;
+
+  transform: rotate(-45deg) translate(-12px, 8px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  background: $orange !important;
+  transform: rotate(45deg) translate(-10px, -6px);
+}
