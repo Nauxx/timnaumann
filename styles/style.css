@@ -403,10 +403,6 @@ nav .nav-active {
         } */
 }
 
-.projects .cards .card .icon .spinner-unicode {
-  font-size: 18rem !important;
-}
-
 .projects .cards .card .icon .card-overlay {
   background: #db9003;
   opacity: 0;
