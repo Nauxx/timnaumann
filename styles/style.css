@@ -244,12 +244,17 @@ nav .nav-active {
 .home .arrow {
   -webkit-animation: bounce 1.3s alternate infinite;
           animation: bounce 1.3s alternate infinite;
-  font-size: 5rem;
+  font-size: 8rem;
   position: relative;
   bottom: -20rem;
   width: 100%;
   text-align: center;
   z-index: 0;
+}
+
+.home .arrow i {
+  -webkit-animation: bounce 1.3s alternate infinite;
+          animation: bounce 1.3s alternate infinite;
 }
 
 /* KEYFRAME ANIMATIONS */
@@ -396,6 +401,10 @@ nav .nav-active {
           height: 250px;
           position: absolute;
         } */
+}
+
+.projects .cards .card .icon .spinner-unicode {
+  font-size: 18rem !important;
 }
 
 .projects .cards .card .icon .card-overlay {

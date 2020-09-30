@@ -25,12 +25,16 @@
   }
   .arrow {
     animation: bounce 1.3s alternate infinite;
-    font-size: 10rem;
+    font-size: 8rem;
     position: relative;
     bottom: -20rem;
     width: 100%;
     text-align: center;
     z-index: 0;
+
+    i {
+      animation: bounce 1.3s alternate infinite;
+    }
   }
 }
 

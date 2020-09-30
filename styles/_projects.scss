@@ -33,6 +33,10 @@
         position: relative; /* so overflow hidden works */
         cursor: pointer;
 
+        .spinner-unicode {
+          font-size: 18rem !important;
+        }
+
         .card-overlay {
           background: $orange;
           opacity: 0;
